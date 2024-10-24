@@ -16,21 +16,21 @@ class MainMenu:
     def draw(self):
         self.screen.fill((0, 0, 0))
 
-        # Draw logo
-        logo_text = self.logo_font.render("Spaceforce", True, (255, 255, 0))  # Yellow text
-        logo_outline = self.logo_font.render("Spaceforce", True, (0, 100, 0))  # Green outline
+        
+        logo_text = self.logo_font.render("Spaceforce", True, (255, 255, 0))  
+        logo_outline = self.logo_font.render("Spaceforce", True, (0, 100, 0))  
         logo_rect = logo_text.get_rect(center=(self.screen.get_width() // 2, 100))
-        self.screen.blit(logo_outline, logo_rect.move(2, 2))  # Slightly offset for outline effect
+        self.screen.blit(logo_outline, logo_rect.move(2, 2))  
         self.screen.blit(logo_outline, logo_rect.move(-2, -2))
         self.screen.blit(logo_outline, logo_rect.move(2, -2))
         self.screen.blit(logo_outline, logo_rect.move(-2, 2))
         self.screen.blit(logo_text, logo_rect)
 
-        # Draw buttons
-        start_text = self.font.render("Start", True, (255, 255, 0))  # Yellow text
-        exit_text = self.font.render("Exit", True, (255, 255, 0))   # Yellow text
-        pygame.draw.rect(self.screen, (0, 100, 0), self.start_button_rect, border_radius=15)  # Dark green button with rounded corners
-        pygame.draw.rect(self.screen, (0, 100, 0), self.exit_button_rect, border_radius=15)   # Dark green button with rounded corners
+        
+        start_text = self.font.render("Start", True, (255, 255, 0)) 
+        exit_text = self.font.render("Exit", True, (255, 255, 0))   
+        pygame.draw.rect(self.screen, (0, 100, 0), self.start_button_rect)  
+        pygame.draw.rect(self.screen, (0, 100, 0), self.exit_button_rect)   
         self.screen.blit(start_text, start_text.get_rect(center=self.start_button_rect.center))
         self.screen.blit(exit_text, exit_text.get_rect(center=self.exit_button_rect.center))
 
